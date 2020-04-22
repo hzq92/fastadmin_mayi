@@ -1,0 +1,62 @@
+
+
+/* 侧边悬浮导航 */
+.right_nav{ right:0; bottom:200px; position:fixed; text-align:left;overflow: hidden;z-index:999;}
+.right_nav li{background:#0085cd;margin:4px 0;padding: 10px;border-top-left-radius: 4px;border-bottom-left-radius: 4px;cursor:pointer;position:relative; right: -70px;}
+.right_nav li .iconBox{text-align: center;overflow: hidden;display: flex;align-items: center;justify-content: space-between}
+.right_nav li img{width: 30px;height:30px;}
+.right_nav li h4{color: #fff;font-size:14px;margin:2px 0;margin-left: 15px;}
+.right_nav li:hover{background:#cf1322}
+.right_nav li .hideBox{display: none;position: absolute;right:120px;padding:10px;padding-right: 15px; top:-10px;z-index: 999;}
+.right_nav li .hideBox .hb{border: 1px solid #ccc;background-color: #fff; padding: 10px 20px;border-top: 2px solid #0085cd;border-bottom-left-radius: 4px;border-bottom-right-radius: 4px;}
+.right_nav li .hideBox .hb h5{padding: 5px 0;margin:0;border-bottom: 2px solid #ccc;color: #0085cd;font-size: 16px;font-weight: 400;display: block;white-space: nowrap;}
+.right_nav li .hideBox .hb p {margin-top: 5px;font-size: 18px;font-weight: 700;}
+.right_nav li .hideBox .hb .qqtalk{margin-top: 10px;}
+.right_nav li .hideBox .hb .qqtalk a{display: flex;align-items: center}
+.right_nav li .hideBox .hb .qqtalk img{width: 25px;height:25px;}
+.right_nav li .hideBox .hb .qqtalk p{font-size: 14px;font-weight: 400;white-space: nowrap;margin-top: -5px;margin-left: 5px;}
+.right_nav li:nth-child(2) .hideBox img{width:140px;height: 140px;margin-top: 10px;}
+
+/* clearFix */
+.clearFix:after {content:" ";display:block;;line-height:0;height:0;visibility:hidden;clear:both;}
+/* articleContent */
+.articleContent {margin-top:20px;color:#151515;line-height:25px;text-indent:40px}
+/* articlelist */
+.articlelist {margin:auto;max-width:1000px;}
+.articlelist ul {width:100%;}
+.articlelist ul li {width:31%;float:left;position:relative;background:#ffffff;margin:5px 1%;border-radius:3px;overflow:hidden;}
+.articlelist ul li a {width:100%;}
+.articlelist ul li a .articlelistTitle {width:100%;padding:5px 0;background:#fafafa;}
+.articlelist ul li a .articlelistTitle h4 {margin:0 20px;max-height:50px;line-height:25px;color:#555555;transition-duration:1s;overflow:hidden;font-size:16px;}
+.articlelist ul li a .articlelistTitle time {margin:0 20px;color:#999999;font-size:12px;}
+
+/* ---- sectionArticle ---- */
+.sectionArticle {background:#ffffff;}
+.sectionArticleHalf {background:#fafafa;}
+.sectionArticleHalf main {min-height:400px;}
+.sectionArticle article {}
+/* articleContent */
+.articleContent {margin-top:20px;color:#151515;line-height:25px;text-indent:40px}
+/* -- main -- */
+.mainList {width:90%;padding:80px 5%;max-width:1000px;float:none;margin:auto;}
+.mainDetails {width:90%;padding:80px 5%;max-width:800px;float:none;margin:auto;}
+hgroup.detailsTitle {line-height:90%;font-size:30px;}
+hgroup.detailsTitle h1,hgroup.detailsTitle h2 {height:100%;}
+hgroup.detailsTitle h1 {line-height:40px;font-size:100%;color:#151515;}
+hgroup.detailsTitle h2 {font-size:30%;color:#cccccc;}
+hgroup.articleTitle {line-height:90%;font-size:40px;}
+hgroup.articleTitle h1,hgroup.articleTitle h2 {height:100%;}
+hgroup.articleTitle h1 {line-height:30px;font-size:100%;color:#dddddd;}
+hgroup.articleTitle h2 {font-size:30%;color:#cccccc;}
+hgroup.articleTitle div {float:right;}
+hgroup.articleTitle div a {font-size:30%;height:25px;line-height:25px;display:inline-block;;color:#ffffff;margin-left:5px;padding:0 10px;border-radius:25px;overflow:hidden;background:#888888;}
+hgroup.articleTitle div a:hover,hgroup.articleTitle div a.stress {background:#e5231f;}
+.articleback {text-align:center;}
+.articleback a {display:block;height:40px;line-height:40px;max-width:100px;text-align:center;;background:#f5f5f5;}
+.articleback a:hover {background:#151515;color:#ffffff;}
+@media screen and (max-width:767px){
+	.articlelist ul li {width:96%;background:#f4f4f4;margin:5px 1%;border-radius:2px;overflow:hidden;}
+}
+
+
+
