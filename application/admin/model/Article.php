@@ -45,7 +45,7 @@ class Article extends Model
 
     public function getTypesList()
     {
-        return ['1' => __('Types 1'), '2' => __('Types 2')];
+        return ['1' => __('Types 1'), '2' => __('Types 2'), '3' => __('Types 3')];
     }
 
     public function getTypesTextAttr($value, $data)

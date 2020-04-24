@@ -34,7 +34,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                         {field: 'updatetime', title: __('Updatetime'), operate:'RANGE', addclass:'datetimerange', formatter: Table.api.formatter.datetime},
                         {field: 'weigh', title: __('Weigh')},
                         {field: 'status', title: __('Status'), searchList: {"1":__('Status 1'),"0":__('Status 0')}, formatter: Table.api.formatter.status},
-                        {field: 'types', title: __('Types'), searchList: {"1":__('Types 1'),"2":__('Types 2')}, formatter: Table.api.formatter.types},
+                        {field: 'types', title: __('Types'), searchList: {"1":__('Types 1'),"2":__('Types 2'),"3":__('Types 3')}, formatter: Table.api.formatter.types},
                         {field: 'operate', title: __('Operate'), table: table, events: Table.api.events.operate, formatter: Table.api.formatter.operate}
                     ]
                 ]

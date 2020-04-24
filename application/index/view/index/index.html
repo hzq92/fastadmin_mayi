@@ -15,37 +15,50 @@
             <div class="slide-cnt" id="slides">
 
                 <!--轮播图片-->
-                <a class="slide-link" href="" >
-                    <img width="100%" src="__CDN__/assets/img/frontend/images/index_slide_1.png" alt="slide1"/>
-                    <div class="slide-text">
-                        <h1></h1>
-                        <p></p>
-                    </div>
-                </a>
+                {empty name="banners"}
+                    <a class="slide-link" href="" >
+                        <img width="100%" src="__CDN__/assets/img/frontend/images/index_slide_1.png" alt="slide1"/>
+                        <div class="slide-text">
+                            <h1></h1>
+                            <p></p>
+                        </div>
+                    </a>
 
-                <a class="slide-link" href="" >
-                    <img width="100%" src="__CDN__/assets/img/frontend/images/index_slide_2.png" alt="slide2"/>
-                    <div class="slide-text">
-                        <h1></h1>
-                        <p></p>
-                    </div>
-                </a>
+                    <a class="slide-link" href="" >
+                        <img width="100%" src="__CDN__/assets/img/frontend/images/index_slide_2.png" alt="slide2"/>
+                        <div class="slide-text">
+                            <h1></h1>
+                            <p></p>
+                        </div>
+                    </a>
 
-                <a class="slide-link" href="" >
-                    <img width="100%" src="__CDN__/assets/img/frontend/images/index_slide_3.png" alt="slide3"/>
-                    <div class="slide-text">
-                        <h1></h1>
-                        <p></p>
-                    </div>
-                </a>
+                    <a class="slide-link" href="" >
+                        <img width="100%" src="__CDN__/assets/img/frontend/images/index_slide_3.png" alt="slide3"/>
+                        <div class="slide-text">
+                            <h1></h1>
+                            <p></p>
+                        </div>
+                    </a>
 
-                <a class="slide-link" href="" >
-                    <img width="100%" src="__CDN__/assets/img/frontend/images/index_slide_4.png" alt="slide4"/>
-                    <div class="slide-text">
-                        <h1></h1>
-                        <p></p>
-                    </div>
-                </a>
+                    <a class="slide-link" href="" >
+                        <img width="100%" src="__CDN__/assets/img/frontend/images/index_slide_4.png" alt="slide4"/>
+                        <div class="slide-text">
+                            <h1></h1>
+                            <p></p>
+                        </div>
+                    </a>
+                {else /}
+                    {volist name="banners" id="vo"}
+                        <a class="slide-link" href="" >
+                            <img width="100%" src="{$vo.banner_image}" alt="slide{$vo.weigh}"/>
+                            <div class="slide-text">
+                                <h1></h1>
+                                <p></p>
+                            </div>
+                        </a>
+                    {/volist}
+                {/empty}
+
 
                 <a href="javascript:void(0);" id="slides_prev" class="slidesjs-previous slidesjs-navigation">
                   <span class="main-ico main-ico-sildeLeft"></span>
@@ -153,56 +166,76 @@
 
     <!-- 自定义图文一结束 -->
     <div class="articlelist clearFix">
-        <ul class="clearFix">
-            <li>
-                <a href="article.html">
-                    <div class="articlelistTitle">
-                        <h4>疫情后独立影像中心如何走出“中国模式”？</h4>
-                        <time>2020-03-03</time>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="article.html">
-                    <div class="articlelistTitle">
-                        <h4>疫情后独立影像中心如何走出“中国模式”？</h4>
-                        <time>2020-03-03</time>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="article.html">
-                    <div class="articlelistTitle">
-                        <h4>疫情后独立影像中心如何走出“中国模式”？</h4>
-                        <time>2020-03-03</time>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="article.html">
-                    <div class="articlelistTitle">
-                        <h4>疫情后独立影像中心如何走出“中国模式”？</h4>
-                        <time>2020-03-03</time>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="article.html">
-                    <div class="articlelistTitle">
-                        <h4>疫情后独立影像中心如何走出“中国模式”？</h4>
-                        <time>2020-03-03</time>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="article.html">
-                    <div class="articlelistTitle">
-                        <h4>疫情后独立影像中心如何走出“中国模式”？</h4>
-                        <time>2020-03-03</time>
-                    </div>
-                </a>
-            </li>
-        </ul>
+
+        {notempty name="articles"}
+
+            <ul class="clearFix">
+                {volist name="articles" id="items"}
+                    <li>
+                        <a href="article.html">
+                            <div class="articlelistTitle">
+                                <h4>{$items.title}</h4>
+                                <time>{$items.updatetime|date="y-m-d",###}</time>
+                            </div>
+                        </a>
+                    </li>
+                {/volist}
+            </ul>
+
+        {else /}
+
+            <ul class="clearFix">
+                <li>
+                    <a href="article.html">
+                        <div class="articlelistTitle">
+                            <h4>疫情后独立影像中心如何走出“中国模式”？</h4>
+                            <time>2020-03-03</time>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="article.html">
+                        <div class="articlelistTitle">
+                            <h4>疫情后独立影像中心如何走出“中国模式”？</h4>
+                            <time>2020-03-03</time>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="article.html">
+                        <div class="articlelistTitle">
+                            <h4>疫情后独立影像中心如何走出“中国模式”？</h4>
+                            <time>2020-03-03</time>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="article.html">
+                        <div class="articlelistTitle">
+                            <h4>疫情后独立影像中心如何走出“中国模式”？</h4>
+                            <time>2020-03-03</time>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="article.html">
+                        <div class="articlelistTitle">
+                            <h4>疫情后独立影像中心如何走出“中国模式”？</h4>
+                            <time>2020-03-03</time>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="article.html">
+                        <div class="articlelistTitle">
+                            <h4>疫情后独立影像中心如何走出“中国模式”？</h4>
+                            <time>2020-03-03</time>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+
+        {/notempty}
     </div>
 		
     <!-- 自定义图文二开始 -->
