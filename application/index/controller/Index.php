@@ -45,8 +45,8 @@ class Index extends Frontend
 
         $this->assign('banners',!empty($banners) ? $banners : []);
         $this->assign('articles',!empty($articles) ? $articles : []);
-        $this->assign('articlesWithVideo',!empty($articlesWithVideo) ? $articlesWithVideo : []);
-        $this->assign('articlesWithPicture',!empty($articlesWithPicture) ? $articlesWithPicture : []);
+        $this->assign('articlesWithVideo',!empty($articlesWithVideo) ? array_slice($articlesWithVideo,0,2) : []);
+        $this->assign('articlesWithPicture',!empty($articlesWithPicture) ? array_slice($articlesWithPicture,0,2) : []);
 
         return $this->view->fetch();
     }

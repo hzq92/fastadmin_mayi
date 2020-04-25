@@ -4,7 +4,7 @@ return [
     'Id'          => 'ID',
     'Title'       => '文章标题',
     'Keywords'    => '关键字',
-    'Description' => '描述',
+    'Content'     => '内容',
     'Image'       => '图片',
     'Vediofile'   => '视频',
     'Createtime'  => '创建时间',

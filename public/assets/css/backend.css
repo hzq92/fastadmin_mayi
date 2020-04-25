@@ -675,6 +675,9 @@ form.form-horizontal .control-label {
 table.table-nowrap tbody > tr > td,
 table.table-nowrap thead > tr > th {
   white-space: nowrap;
+  max-width: 400px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .fixed-table-container thead th .sortable {
   padding-right: 0;

@@ -90,76 +90,128 @@
         <div class="wrapper_slide_2_intro">
             <p class="settings-wrapper_slide_2_intro_color">-  我 们 可 以 做  -</p>
         </div>
+
         <div class="list-sections">
             <ul>
-                <li class="item-list" id="item-1">
-                    <a href=""  class="open-popup-link">
-                        <div class="pic-item pic-item-1">
-                            <img class="img-scale img-01-show" src="__CDN__/assets/img/frontend/images/img-01.png" alt="">
-                        </div>
+                <!--视频文章-->
+                {empty name="articlesWithVideo"}
+                    <li class="item-list" id="item-1">
+                        <a href=""  class="open-popup-link">
+                            <div class="pic-item pic-item-1">
+                                <img class="img-scale img-01-show" src="__CDN__/assets/img/frontend/images/img-01.png" alt="">
+                            </div>
 
-                        <div class="overplay">
-                            <img src="__CDN__/assets/img/frontend/images/icon-05.png" alt="">
-                            <h1 class="settings-list_color">音乐制作</h1>
-                            <p>-</p>
-                        </div>
+                            <div class="overplay">
+                                <img src="__CDN__/assets/img/frontend/images/icon-05.png" alt="">
+                                <h1 class="settings-list_color">音乐制作</h1>
+                                <p>-</p>
+                            </div>
 
-                        <div class="item-plus">
-                            <p class="settings-list_content_color">将你的故事心情、优美的图片、有共鸣的音乐以及心动的视频随时随地分享</p>
-                        </div>
-                    </a>
-                </li>
-                <li class="item-list" id="item-2">
-                    <a href=""  class="open-popup-link">
-                        <div class="pic-item pic-item-2">
-                            <img class="img-scale img-02-show" src="__CDN__/assets/img/frontend/images/img-02.png" alt="">
-                        </div>
+                            <div class="item-plus">
+                                <p class="settings-list_content_color">将你的故事心情、优美的图片、有共鸣的音乐以及心动的视频随时随地分享</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="item-list" id="item-2">
+                        <a href=""  class="open-popup-link">
+                            <div class="pic-item pic-item-2">
+                                <img class="img-scale img-02-show" src="__CDN__/assets/img/frontend/images/img-02.png" alt="">
+                            </div>
 
-                        <div class="overplay">
-                            <img src="__CDN__/assets/img/frontend/images/icon-06.png" alt="">
-                            <h1 class="settings-list_color">视频制作</h1>
-                            <p>-</p>
-                        </div>
+                            <div class="overplay">
+                                <img src="__CDN__/assets/img/frontend/images/icon-06.png" alt="">
+                                <h1 class="settings-list_color">视频制作</h1>
+                                <p>-</p>
+                            </div>
 
-                        <div class="item-plus">
-                            <p class="settings-list_content_color">寻找最真实的自己，发现新奇或美好的、 珍贵的事物，制作成影片和音乐</p>
-                        </div>
-                    </a>
-                </li>
-                <li class="item-list" id="item-3">
-                    <a href=""  class="open-popup-link">
-                        <div class="pic-item pic-item-3">
-                            <img class="img-scale img-03-show" src="__CDN__/assets/img/frontend/images/img-03.png" alt="">
-                        </div>
+                            <div class="item-plus">
+                                <p class="settings-list_content_color">寻找最真实的自己，发现新奇或美好的、 珍贵的事物，制作成影片和音乐</p>
+                            </div>
+                        </a>
+                    </li>
+                {else /}
+                    {foreach $articlesWithVideo as $vo}
+                        <li class="item-list" id="item-{$vo.id}">
+                            <div class="open-popup-link">
+                                <video class="video-item" poster="__CDN__/assets/img/frontend/images/img-03.png">
+                                    <source src="__CDN__/uploads/20200425/123.mp4" type="video/mp4">
+                                </video>
 
-                        <div class="overplay">
-                            <img src="__CDN__/assets/img/frontend/images/icon-07.png" alt="">
-                            <h1 class="settings-list_color">图片摄影</h1>
-                            <p>-</p>
-                        </div>
+                                <div class="overplay">
+                                    <img src="__CDN__/assets/img/frontend/images/icon-06.png" alt="">
+                                    <h1 class="settings-list_color">音乐制作</h1>
+                                    <p>-</p>
+                                </div>
 
-                        <div class="item-plus">
-                            <p class="settings-list_content_color">图片记录你的故事，分享你的心情，为你的生活存留记忆</p>
-                        </div>
-                    </a>
-                </li>
-                <li class="item-list" id="item-4">
-                    <a href=""  class="open-popup-link">
-                        <div class="pic-item pic-item-4">
-                            <img class="img-scale img-04-show" src="__CDN__/assets/img/frontend/images/img-04.jpg" alt="">
-                        </div>
+                                <div class="item-plus">
+                                    <p class="settings-list_content_color">{$vo.content}</p>
+                                </div>
+                            </div>
+                        </li>
+                    {/foreach}
+                {/empty}
 
-                        <div class="overplay">
-                            <img src="__CDN__/assets/img/frontend/images/icon-08.png" alt="">
-                            <h1 class="settings-list_color">广告拍摄</h1>
-                            <p>-</p>
-                        </div>
+                <!--图片文章-->
+                {empty name="articlesWithPicture"}
+                    <li class="item-list" id="item-3">
+                        <a href="" class="open-popup-link">
+                            <div class="pic-item pic-item-3">
+                                <img class="img-scale img-03-show" src="__CDN__/assets/img/frontend/images/img-03.png" alt="">
+                            </div>
 
-                        <div class="item-plus">
-                            <p class="settings-list_content_color">每一帧的记录，都是创意的展现，我们尽量最大程度的展示你的品牌价值和语言</p>
-                        </div>
-                    </a>
-                </li>
+                            <div class="overplay">
+                                <img src="__CDN__/assets/img/frontend/images/icon-07.png" alt="">
+                                <h1 class="settings-list_color">图片摄影</h1>
+                                <p>-</p>
+                            </div>
+
+                            <div class="item-plus">
+                                <p class="settings-list_content_color">图片记录你的故事，分享你的心情，为你的生活存留记忆</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="item-list" id="item-4">
+                        <a href=""  class="open-popup-link">
+                            <div class="pic-item pic-item-4">
+                                <img class="img-scale img-04-show" src="__CDN__/assets/img/frontend/images/img-04.jpg" alt="">
+                            </div>
+
+                            <div class="overplay">
+                                <img src="__CDN__/assets/img/frontend/images/icon-08.png" alt="">
+                                <h1 class="settings-list_color">广告拍摄</h1>
+                                <p>-</p>
+                            </div>
+
+                            <div class="item-plus">
+                                <p class="settings-list_content_color">每一帧的记录，都是创意的展现，我们尽量最大程度的展示你的品牌价值和语言</p>
+                            </div>
+                        </a>
+                    </li>
+                {else /}
+                    {foreach articlesWithPicture as $vo}
+                        <li class="item-list" id="item-{$vo.id}">
+                            <a href="" class="open-popup-link">
+                                <div class="pic-item pic-item-1">
+                                    {empty name="vo.image"}
+                                        <img class="img-scale img-01-show" src="__CDN__/assets/img/frontend/images/img-01.png" alt="">
+                                    {else /}
+                                        <img class="img-scale img-01-show" src="{$vo.image}" alt="">
+                                    {/empty}
+                                </div>
+
+                                <div class="overplay">
+                                    <img src="__CDN__/assets/img/frontend/images/icon-07.png" alt="">
+                                    <h1 class="settings-list_color">{$vo.title}</h1>
+                                    <p>-</p>
+                                </div>
+
+                                <div class="item-plus">
+                                    <p class="settings-list_content_color">{$vo.content}</p>
+                                </div>
+                            </a>
+                        </li>
+                    {/foreach}
+                {/empty}
             </ul>
           </div>
     </div>

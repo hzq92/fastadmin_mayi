@@ -15,7 +15,7 @@
 .right_nav li .hideBox .hb .qqtalk a{display: flex;align-items: center}
 .right_nav li .hideBox .hb .qqtalk img{width: 25px;height:25px;}
 .right_nav li .hideBox .hb .qqtalk p{font-size: 14px;font-weight: 400;white-space: nowrap;margin-top: -5px;margin-left: 5px;}
-.right_nav li:nth-child(2) .hideBox img{width:140px;height: 140px;margin-top: 10px;}
+.right_nav li:nth-child(2) .hideBox img, .wechatQrcode .hideBox img{width:140px;height: 140px;margin-top: 10px;}
 
 /* clearFix */
 .clearFix:after {content:" ";display:block;;line-height:0;height:0;visibility:hidden;clear:both;}

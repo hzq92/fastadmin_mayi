@@ -1,32 +1,16 @@
 <!--客服悬浮按钮-->
 <ul class="right_nav">
-    <li>
-        <div class="iconBox oln_ser">
-            <img src='__CDN__/assets/img/frontend/images/rnqq.png'>
-            <h4>在线客服</h4>
-        </div>
-        <div class="hideBox">
-            <div class="hb">
-                <h5>在线咨询</h5>
-                <div class="qqtalk">
-                    <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin={$site.serviceQQ}&site=qq&menu=yes">
-                        <span>
-                            <img src="__CDN__/assets/img/frontend/images/online.png" alt="点击发消息" title="点击发消息" />
-                        </span>
-                        <p>点击发消息</p>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </li>
-    <li>
+    <li class="wechatQrcode">
         <div class="iconBox">
             <img src='__CDN__/assets/img/frontend/images/rnphone.png'>
             <h4>手机站点</h4>
         </div>
         <div class="hideBox">
             <div class="hb">
-                <h5>手机扫一扫打开</h5>
+                <h5 style="text-align: center">
+                    <span>手机扫一扫打开</span><br>
+                    <span id="copyTel">13110990001</span>
+                </h5>
                 {if isset($site.wechatQrcode) && !empty($site.wechatQrcode)}
                     <img src="{$site.wechatQrcode}">
                 {else}
