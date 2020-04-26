@@ -133,15 +133,9 @@
                     {foreach $articlesWithVideo as $vo}
                         <li class="item-list" id="item-{$vo.id}">
                             <div class="open-popup-link">
-                                <video class="video-item" poster="__CDN__/assets/img/frontend/images/img-03.png">
-                                    <source src="__CDN__/uploads/20200425/123.mp4" type="video/mp4">
+                                <video class="video-item" poster="{$vo.image}" controls>
+                                    <source src="{$vo.vediofile}" type="video/mp4">
                                 </video>
-
-                                <div class="overplay">
-                                    <img src="__CDN__/assets/img/frontend/images/icon-06.png" alt="">
-                                    <h1 class="settings-list_color">音乐制作</h1>
-                                    <p>-</p>
-                                </div>
 
                                 <div class="item-plus">
                                     <p class="settings-list_content_color">{$vo.content}</p>
@@ -190,7 +184,7 @@
                 {else /}
                     {foreach articlesWithPicture as $vo}
                         <li class="item-list" id="item-{$vo.id}">
-                            <a href="" class="open-popup-link">
+                            <a href="/index/index/article?id={$vo.id}" class="open-popup-link">
                                 <div class="pic-item pic-item-1">
                                     {empty name="vo.image"}
                                         <img class="img-scale img-01-show" src="__CDN__/assets/img/frontend/images/img-01.png" alt="">

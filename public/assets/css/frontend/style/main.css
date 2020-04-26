@@ -1507,7 +1507,7 @@ h3.social_bind--border {
 
 @media screen and (max-width: 768px) {
     .pic-item img{
-        display: none;
+        /*display: none;*/
     }
     .item-list .open-popup-link{
         position: relative;
@@ -1516,9 +1516,9 @@ h3.social_bind--border {
     .pic-item{
         background-position: center;
         background-size: cover;
-        padding-bottom: 150%;
+        /*padding-bottom: 150%;*/
     }
-    .pic-item-1{
+    /*.pic-item-1{
         background-image:url("../../../img/frontend/images/img-01.png");
     }
     .pic-item-2{
@@ -1529,7 +1529,7 @@ h3.social_bind--border {
     }
     .pic-item-4{
         background-image: url("../../../img/frontend/images/img-04.jpg");
-    }
+    }*/
     .item-plus{
         position: inherit;
     }

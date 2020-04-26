@@ -51,4 +51,24 @@ class Index extends Frontend
         return $this->view->fetch();
     }
 
+    /*
+     * 文章页面
+     */
+    public function article (){
+        $id = $this->request->get('id');
+
+        if (empty($id)) {
+            $this->error('参数错误','/index/index/index');
+        }
+
+        $articles = Banners::table('fa_article')->where(array('status'=>1,'id'=>$id))->find();
+
+        if (empty($articles)) {
+            $this->error('数据错误，请联系管理员','/index/index/index');
+        }
+
+        $this->assign('articles',!empty($articles) ? $articles : []);
+        return $this->view->fetch();
+    }
+
 }

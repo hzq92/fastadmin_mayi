@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html class="settings-main_background" lang="{$config.language}"><!--<![endif]-->
+<head>
+    <!-- 加载样式及META信息 -->
+    {include file="common/meta" /}
+</head>
+<body class=" body-ico-white">
+	<section class="sectionArticle">
+		<article class="clearFix">
+			<main class="main mainDetails">
+				<div class="articleback"><a href="/">返回</a></div>
+				<hgroup class="detailsTitle">
+					<h1>{$articles.title}</h1>
+					<h2>{$articles.updatetime}</h2>
+				</hgroup>
+				<div class="articleContent">
+                    {$articles.content}
+				</div>
+			</main>
+		</article>
+	</section>
+
+    <!--客服-->
+    {include file="common/service" /}
+
+</body>
+</html>
