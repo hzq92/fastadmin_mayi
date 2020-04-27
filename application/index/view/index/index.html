@@ -130,7 +130,7 @@
                         </a>
                     </li>
                 {else /}
-                    {foreach $articlesWithVideo as $vo}
+                    <!--{foreach $articlesWithVideo as $vo}
                         <li class="item-list" id="item-{$vo.id}">
                             <div class="open-popup-link">
                                 <video class="video-item" poster="{$vo.image}" controls>
@@ -142,11 +142,76 @@
                                 </div>
                             </div>
                         </li>
-                    {/foreach}
+                    {/foreach}-->
+
+                    <li class="item-list" id="item-50">
+                        <div class="open-popup-link" onclick="playVideo('video-item-50')">
+                            <video class="video-item" id="video-item-50" poster="__CDN__/assets/img/frontend/images/img-01.png">
+                                <source src="__CDN__/uploads/test/test1.mp4" type="video/mp4">
+                            </video>
+
+                            <div class="overplay">
+                                <img src="__CDN__/assets/img/frontend/images/icon-06.png" alt="">
+                            </div>
+
+                            <div class="item-plus">
+                                <p class="settings-list_content_color">寻找最真实的自己，发现新奇或美好的、 珍贵的事物，制作成影片和音乐111</p>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="item-list" id="item-51">
+                        <div class="open-popup-link" onclick="playVideo('video-item-51')">
+                            <video class="video-item" id="video-item-51" poster="__CDN__/assets/img/frontend/images/img-02.png">
+                                <source src="__CDN__/uploads/test/test2.mp4" type="video/mp4">
+                            </video>
+
+                            <div class="overplay">
+                                <img src="__CDN__/assets/img/frontend/images/icon-06.png" alt="">
+                            </div>
+
+                            <div class="item-plus">
+                                <p class="settings-list_content_color">寻找最真实的自己，发现新奇或美好的、 珍贵的事物，制作成影片和音乐222</p>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="item-list" id="item-52">
+                        <div class="open-popup-link" onclick="playVideo('video-item-52')">
+                            <video class="video-item" id="video-item-52" poster="__CDN__/assets/img/frontend/images/img-03.png">
+                                <source src="__CDN__/uploads/test/test1.mp4" type="video/mp4">
+                            </video>
+
+                            <div class="overplay">
+                                <img src="__CDN__/assets/img/frontend/images/icon-06.png" alt="">
+                            </div>
+
+                            <div class="item-plus">
+                                <p class="settings-list_content_color">寻找最真实的自己，发现新奇或美好的、 珍贵的事物，制作成影片和音乐333</p>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="item-list" id="item-53">
+                        <div class="open-popup-link" onclick="playVideo('video-item-53')">
+                            <video class="video-item" id="video-item-53" poster="__CDN__/assets/img/frontend/images/img-04.jpg">
+                                <source src="__CDN__/uploads/test/test2.mp4" type="video/mp4">
+                            </video>
+
+                            <div class="overplay" onclick="playVideo('item-53')">
+                                <img src="__CDN__/assets/img/frontend/images/icon-06.png" alt="">
+                            </div>
+
+                            <div class="item-plus">
+                                <p class="settings-list_content_color">寻找最真实的自己，发现新奇或美好的、 珍贵的事物，制作成影片和音乐444</p>
+                            </div>
+                        </div>
+                    </li>
+
                 {/empty}
 
                 <!--图片文章-->
-                {empty name="articlesWithPicture"}
+                <!--{empty name="articlesWithPicture"}
                     <li class="item-list" id="item-3">
                         <a href="" class="open-popup-link">
                             <div class="pic-item pic-item-3">
@@ -205,7 +270,7 @@
                             </a>
                         </li>
                     {/foreach}
-                {/empty}
+                {/empty}-->
             </ul>
           </div>
     </div>
@@ -307,32 +372,47 @@
             $('#slides_next').hide();
 
             $("#slides").slidesjs({
-            play: {
-                active: true,
-                // [boolean] Generate the play and stop buttons.
-                // You cannot use your own buttons. Sorry.
-                effect: "slide",
-                // [string] Can be either "slide" or "fade".
-                interval: 5000,
-                // [number] Time spent on each slide in milliseconds.
-                auto: true,
-                // [boolean] Start playing the slideshow on load.
-                swap: false,
-                // [boolean] show/hide stop and play buttons
-                pauseOnHover: true,
-                // [boolean] pause a playing slideshow on hover
-                restartDelay: 2500
-                // [number] restart delay on inactive slideshow
-            },
-            navigation: {
-              active: false,
-              effect: "slide"
-            },
-            pagination:{
-              active: true
-            }
+                play: {
+                    active: true,
+                    // [boolean] Generate the play and stop buttons.
+                    // You cannot use your own buttons. Sorry.
+                    effect: "slide",
+                    // [string] Can be either "slide" or "fade".
+                    interval: 5000,
+                    // [number] Time spent on each slide in milliseconds.
+                    auto: true,
+                    // [boolean] Start playing the slideshow on load.
+                    swap: false,
+                    // [boolean] show/hide stop and play buttons
+                    pauseOnHover: true,
+                    // [boolean] pause a playing slideshow on hover
+                    restartDelay: 2500
+                    // [number] restart delay on inactive slideshow
+                },
+                navigation: {
+                  active: false,
+                  effect: "slide"
+                },
+                pagination:{
+                  active: true
+                }
+            });
         });
-      });
+
+        //视频播放功能
+        function playVideo(videoID) {
+            var theVideo = document.getElementById(videoID);
+
+            if (theVideo.paused){
+                theVideo.webkitRequestFullScreen();
+                theVideo.play();
+            }
+
+            else
+                theVideo.pause();
+
+            console.log('videoID:',theVideo);
+        }
     </script>
     </div>
 

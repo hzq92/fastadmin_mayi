@@ -399,6 +399,11 @@ dd{margin:0px;}
     font-size: 30px;
 }
 
+.list-sections li .open-popup-link {
+    width: 100%;
+    height: 830px;
+}
+
 .video-item {
     width: 100%;
     height: 100%;
@@ -1512,6 +1517,7 @@ h3.social_bind--border {
     .item-list .open-popup-link{
         position: relative;
         display: block;
+        height: 300px!important;
     }
     .pic-item{
         background-position: center;
