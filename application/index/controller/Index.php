@@ -21,7 +21,7 @@ class Index extends Frontend
         /*
          * @params type int 文章类型：1-文章带视频, 2-文章带图片, 3-纯文章
          */
-        $allContent = Banners::table('fa_article')->where(array('status'=>1))->limit(100)->select();
+        $allContent = Banners::table('fa_article')->where(array('status'=>1))->limit(100)->order('weigh', 'desc')->select();
 
         $articles            = array();
         $articlesWithPicture = array();
@@ -45,8 +45,8 @@ class Index extends Frontend
 
         $this->assign('banners',!empty($banners) ? $banners : []);
         $this->assign('articles',!empty($articles) ? $articles : []);
-        $this->assign('articlesWithVideo',!empty($articlesWithVideo) ? array_slice($articlesWithVideo,0,2) : []);
-        $this->assign('articlesWithPicture',!empty($articlesWithPicture) ? array_slice($articlesWithPicture,0,2) : []);
+        $this->assign('articlesWithVideo',!empty($articlesWithVideo) ? array_slice($articlesWithVideo,0,4) : []);
+        //$this->assign('articlesWithPicture',!empty($articlesWithPicture) ? array_slice($articlesWithPicture,0,4) : []);
 
         return $this->view->fetch();
     }
