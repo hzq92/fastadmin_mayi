@@ -1,7 +1,7 @@
 <?php
 
 return array (
-  'name' => '测试网站',
+  'name' => 'Alice TV',
   'keywords' => '关键字123',
   'description' => '描述123',
   'serviceQQ' => '154339617',
@@ -39,4 +39,7 @@ return array (
   'mail_smtp_pass' => 'password',
   'mail_verify_type' => '2',
   'mail_from' => '10000@qq.com',
+  'aboutUs' => 'Alice TV 发现新奇或美好的、珍贵的事物，制作成影片或音乐。我们分享给人最新、最有趣的故事。我们不仅原创，我们也同时与不同的合作伙伴一起创造他们的品牌故事。',
+  'address' => '广东省深圳市高新技术中心科技园区B座',
+  'Telephone' => '13110990002',
 );
