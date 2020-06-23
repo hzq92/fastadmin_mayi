@@ -67,6 +67,13 @@ class Index extends Frontend
             $this->error('数据错误，请联系管理员','/index/index/index');
         }
 
+        //文章、图片文章、视频文章
+        /*
+         * @params type int 文章类型：1-文章带视频, 2-文章带图片, 3-纯文章
+         */
+        $articlesWithVideo = Banners::table('fa_article')->where(array('status'=>1,'types'=>1))->limit(100)->order('weigh', 'desc')->select();
+
+        $this->assign('articlesWithVideo',!empty($articlesWithVideo) ? array_slice($articlesWithVideo,0,4) : []);
         $this->assign('articles',!empty($articles) ? $articles : []);
         return $this->view->fetch();
     }
